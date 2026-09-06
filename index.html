@@ -332,7 +332,7 @@ const TASKS = [
       "DU gibst dem Joker einen Drink aus."
     ]} },
   { id:"j5", pool:"joker",
-    text:"Jokers Rätsel 🧩 — Der Joker stellt dir ein Rätsel. Du hast 10 Sekunden.",
+    text:"Jokers Rätsel 🧩 — Der Joker stellt dir ein Rätsel. Du hast 20 Sekunden.",
     interaction:{type:'riddle'} }
 ];
 
@@ -556,7 +556,7 @@ function outcome(c,msg){
   r.className="reveal"; r.textContent=msg; c.appendChild(r);
 }
 
-/* RÄTSEL (nur Joker): Start -> Rätsel + 10-s-Countdown -> Lösung -> Ausgang */
+/* RÄTSEL (nur Joker): Start -> Rätsel + 20-s-Countdown -> Lösung -> Ausgang */
 function buildRiddle(spec, c){
   const start=document.createElement("button");
   start.className="btn btn-primary"; start.textContent="RÄTSEL STARTEN";
@@ -566,7 +566,7 @@ function buildRiddle(spec, c){
                              : {q:"Keine Rätsel eingetragen.", a:"—"};
 
     const q=document.createElement("div"); q.className="reveal"; q.textContent=r.q;
-    const t=document.createElement("div"); t.className="timer"; let s=10; t.textContent=s;
+    const t=document.createElement("div"); t.className="timer"; let s=20; t.textContent=s;
     const ans=document.createElement("div");                 // wird bei "Lösung" gefüllt
 
     const solBtn=document.createElement("button");
